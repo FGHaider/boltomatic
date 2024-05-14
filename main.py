@@ -83,6 +83,10 @@ class Fastener(Material):
 
         self.length: float = 0
 
+        self.helix_angle: float = 0
+        self.thread_grove_half_angle: float = 0
+        self.under_head_bearing_angle: float = 0
+
         self.type = 'M'  # or MJ
 
         # The following values apply for metric
@@ -101,9 +105,7 @@ class Fastener(Material):
         self.Asm = 0.25 * math.pi * self.dsm ** 2  # stiffness area
         self.A0 = 0.25 * math.pi * self.d0 ** 2  # Smallest cross-section of fastener shank
 
-        self.helix_angle: float = 0
-        self.thread_grove_half_angle: float = 0
-        self.under_head_bearing_angle: float = 0
+
 
 
 def wedge_model(preload, joint, fastener: Fastener, prevailing_torque=0):
